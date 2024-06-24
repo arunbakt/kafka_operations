@@ -1,0 +1,66 @@
+lowercaseOutputName: false
+
+rules:
+  # Edited by Arun to match DefaultPrometheusQuerySupplier in cruisecontrol
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), request=(.+)><>Max
+    name: kafka_$1_$2_Max
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), request=(.+)><>Mean
+    name: kafka_$1_$2_Mean
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), request=(.+)><>50thPercentile
+    name: kafka_$1_$2_50thPercentile
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), request=(.+)><>999thPercentile
+    name: kafka_$1_$2_999thPercentile
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), request=(.+)><>999thPercentile
+    name: kafka_$1_$2_999thPercentile
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+  - pattern: kafka\.(\w+)<type=(.+), name=(.+), request=(.+), version=(\d+)><>OneMinuteRate
+    name: kafka_$1_$2_OneMinuteRate
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "request": "$4"
+      "version": "$5"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), topic=(.+)><>OneMinuteRate
+    name: kafka_$1_$2_OneMinuteRate
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "topic": "$4"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+)><>OneMinuteRate
+    name: kafka_$1_$2_OneMinuteRate
+    type: GAUGE
+    labels:
+      "name": "$3"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+), topic=(.+), partition=(.+)><>Value
+    name: kafka_$1_$2_Value
+    type: GAUGE
+    labels:
+      "name": "$3"
+      "topic": "$4"
+      "partition": "$5"
+  - pattern: kafka.(\w+)<type=(.+), name=(.+)><>Value
+    name: kafka_$1_$2_Value
+    type: GAUGE
+    labels:
+      "name": "$3"
+logging:
+  level: DEBUG

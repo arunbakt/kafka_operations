@@ -1,0 +1,20 @@
+rules:
+- pattern: kafka.server<type=BrokerTopicMetrics, name=BytesInPerSec, topic=(.+)><>OneMinuteRate
+  name: kafka_server_brokertopicmetrics_bytesinpersec_oneminuterate
+  type: GAUGE
+  labels:
+    topic: "$1"
+
+- pattern: kafka.server<type=BrokerTopicMetrics, name=MessagesInPerSec, topic=(.+)><>OneMinuteRate
+  name: kafka_server_brokertopicmetrics_messagesinpersec_oneminuterate
+  type: GAUGE
+  labels:
+    topic: "$1"
+
+- pattern: kafka.server<type=BrokerTopicMetrics, name=BytesOutPerSec, topic=(.+)><>OneMinuteRate
+  name: kafka_server_brokertopicmetrics_bytesoutpersec_oneminuterate
+  type: GAUGE
+  labels:
+    topic: "$1"
+
+  # Add more patterns as needed

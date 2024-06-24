@@ -1,0 +1,34 @@
+{
+  "brokerCapacities":[
+    {
+      "brokerId": "1",
+      "capacity": {
+        "DISK": "100000",
+        "CPU": "100",
+        "NW_IN": "10000",
+        "NW_OUT": "10000"
+      },
+      "doc": "This is the default capacity. Capacity unit used for disk is in MB, cpu is in percentage, network throughput is in KB."
+    },
+    {
+      "brokerId": "2",
+      "capacity": {
+        "DISK": "100000",
+        "CPU": "100",
+        "NW_IN": "10000",
+        "NW_OUT": "10000"
+      },
+      "doc": "This is the default capacity. Capacity unit used for disk is in MB, cpu is in percentage, network throughput is in KB."
+    },
+    {
+    "brokerId": "3",
+    "capacity": {
+      "DISK": "100000",
+      "CPU": "100",
+      "NW_IN": "10000",
+      "NW_OUT": "10000"
+    },
+    "doc": "This is the default capacity. Capacity unit used for disk is in MB, cpu is in percentage, network throughput is in KB."
+    }
+  ]
+}
